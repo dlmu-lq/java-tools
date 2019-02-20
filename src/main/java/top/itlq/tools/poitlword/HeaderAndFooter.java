@@ -31,7 +31,7 @@ public class HeaderAndFooter {
 
     @Test
     public void test1() throws Exception{
-        XWPFDocument document = new XWPFDocument(new BufferedInputStream(new FileInputStream("src/main/resources/poi/word/template/base.docx")));
+        XWPFDocument document = new XWPFDocument(new BufferedInputStream(new FileInputStream("src/main/resources/poi/word/template/base64.docx")));
         List<XWPFHeader> headers = document.getHeaderList();
 //        parsHeader = headers.get(2).getParagraphs().toArray(new XWPFParagraph[]{});
 //        CTHdrFtr ctHdrFtr = new CTHdrFtr() {
