@@ -1,4 +1,4 @@
-package top.itlq.tools.replace;
+package top.itlq.tools.regex.replace;
 
 import java.io.*;
 import java.util.regex.Matcher;
