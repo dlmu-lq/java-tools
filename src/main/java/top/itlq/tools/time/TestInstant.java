@@ -57,5 +57,9 @@ class TestInstant {
         System.out.println(localDateTime.atZone(ZoneOffset.UTC).withZoneSameInstant(ZoneId.systemDefault()));
     }
 
-
+    @Test
+    void test5(){
+        DateTimeFormatter dateTimeFormatter = DateTimeFormatter.ofPattern("yyMMddHH");
+        System.out.println(Long.valueOf(LocalDateTime.ofInstant(Instant.now(),ZoneOffset.UTC).format(dateTimeFormatter)));
+    }
 }

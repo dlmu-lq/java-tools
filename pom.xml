@@ -19,6 +19,9 @@
             </plugin>
         </plugins>
     </build>
+    <properties>
+        <reactor.version>3.2.10.RELEASE</reactor.version>
+    </properties>
 
     <dependencies>
         <dependency>
@@ -49,6 +52,12 @@
             <version>5.3.0</version>
         </dependency>
         <!--junit 5 end-->
+        <!-- https://mvnrepository.com/artifact/io.projectreactor/reactor-core -->
+        <dependency>
+            <groupId>io.projectreactor</groupId>
+            <artifactId>reactor-core</artifactId>
+            <version>${reactor.version}</version>
+        </dependency>
     </dependencies>
 
 </project>
