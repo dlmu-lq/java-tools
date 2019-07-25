@@ -39,7 +39,7 @@ public class StyleTest {
                 .customPolicy("tableStyleTest",new TableStyleTestPolicy())
                 .build();
         XWPFTemplate mainTemplate = XWPFTemplate.compile(mainTemplatePath,config);
-        mainTemplate.render(new HashMap<>(){{
+        mainTemplate.render(new HashMap<String,DocxRenderData>(){{
             put("template1",getTableSubDoc());
         }});
         try {
@@ -55,7 +55,7 @@ public class StyleTest {
     }
 
     static DocxRenderData getTableSubDoc(){
-        HashMap<String,Object> map = new HashMap<>(){{
+        HashMap<String,Object> map = new HashMap<String, Object>(){{
            put("tableStyleTest",new Object());
         }};
         return new DocxRenderData(new File(tableTemplatePath),map);

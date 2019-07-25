@@ -39,8 +39,8 @@ public class BaseTest {
     @Test
     public void test2(){
         XWPFTemplate template = XWPFTemplate.compile("src/main/java/top/itlq/tools/poitlword/doc/main_template.docx");
-        template.render(new HashMap<>(){{
-            put("template1",new DocxRenderData(new File("src/main/java/top/itlq/tools/poitlword/doc/template3.docx"),new HashMap<>(){{
+        template.render(new HashMap<String,DocxRenderData>(){{
+            put("template1",new DocxRenderData(new File("src/main/java/top/itlq/tools/poitlword/doc/template3.docx"),new HashMap<String,MiniTableRenderData>(){{
                 put("testTable",new MiniTableRenderData(
                         new RowRenderData(
                                 Arrays.asList(new TextRenderData("姓名"), new TextRenderData("性别"), new TextRenderData("年龄"))
