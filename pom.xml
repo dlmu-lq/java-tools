@@ -52,12 +52,21 @@
             <version>5.3.0</version>
         </dependency>
         <!--junit 5 end-->
+        <!--reactor start-->
+        <dependency>
+            <groupId>io.projectreactor</groupId>
+            <artifactId>reactor-bom</artifactId>
+            <version>Bismuth-RELEASE</version>
+            <type>pom</type>
+            <scope>import</scope>
+        </dependency>
         <!-- https://mvnrepository.com/artifact/io.projectreactor/reactor-core -->
         <dependency>
             <groupId>io.projectreactor</groupId>
             <artifactId>reactor-core</artifactId>
             <version>${reactor.version}</version>
         </dependency>
+        <!--reactor end-->
     </dependencies>
 
 </project>
