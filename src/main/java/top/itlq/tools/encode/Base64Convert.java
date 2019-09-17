@@ -14,8 +14,10 @@ public class Base64Convert {
     public void test(){
         Base64.Decoder decoder = Base64.getDecoder();
         try {
-            BufferedOutputStream out = new BufferedOutputStream(new FileOutputStream("src/main/resources/tools/test.png"));
-            BufferedReader br = new BufferedReader(new FileReader("src/main/resources/tools/base64/base64string"));
+//            BufferedOutputStream out = new BufferedOutputStream(new FileOutputStream("src/main/resources/tools/test.png"));
+////            BufferedReader br = new BufferedReader(new FileReader("src/main/resources/tools/base64/base64string"));
+            BufferedOutputStream out = new BufferedOutputStream(new FileOutputStream("src/main/resources/tools/aaa.ts"));
+            BufferedReader br = new BufferedReader(new FileReader("src/main/resources/tools/base64/aaa.ts.b"));
 
             String a;
             StringBuffer sb = new StringBuffer();

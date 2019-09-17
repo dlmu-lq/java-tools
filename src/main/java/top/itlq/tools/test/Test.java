@@ -19,4 +19,12 @@ public class Test {
         DecimalFormat decimalFormat = new DecimalFormat("#.00");
         System.out.println(decimalFormat.format(n));
     }
+
+    @org.junit.jupiter.api.Test
+    void test1(){
+        Integer a = null;
+        System.out.println(0 != a);
+        System.out.println(0 == a);
+        System.out.println(a == 0);
+    }
 }
