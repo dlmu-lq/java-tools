@@ -8,6 +8,9 @@ import reactor.core.scheduler.Schedulers;
  * 调度器测试
  */
 public class SchedulersTest {
+    /**
+     * subscribeOn 直接影响到request到的序列产生源头至第一个publishOn，publishOn影响到后续逻辑流程至下一个publishOn；
+     */
     @Test
     void test(){
         Flux.generate(sink->{

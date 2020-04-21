@@ -15,7 +15,7 @@ public class MonoTest {
                 .flatMap(i -> {
                     System.out.println("mono0" + i);
                     try {
-                        TimeUnit.MILLISECONDS.sleep(200);
+                        TimeUnit.SECONDS.sleep(1);
                     } catch (InterruptedException e) {
                         e.printStackTrace();
                     }
@@ -24,7 +24,7 @@ public class MonoTest {
                 })
                 .all(Boolean::booleanValue);
         System.out.println("out 1");
-        mono.block();
+        mono.subscribe(System.out::println);
         System.out.println("out 2");;
     }
 }

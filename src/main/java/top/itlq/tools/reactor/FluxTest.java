@@ -8,6 +8,10 @@ import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.nio.file.DirectoryStream;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.Arrays;
 import java.util.concurrent.TimeUnit;
 
@@ -102,5 +106,51 @@ public class FluxTest {
                 })
                 .filter(p -> p < 0)
                 .subscribe(System.err::println);
+    }
+
+    @Test
+    void testToMono(){
+        Flux.just(1,2,3)
+                .flatMap(i -> {
+                    System.out.println("1:" + i);
+                    return Mono.empty();
+                })
+//                .then(Mono.just(4))
+                .subscribe(System.out::println, System.err::println, System.out::println);
+    }
+
+
+
+    @Test
+    void testStreamClose(){
+        try {
+            Path path = Paths.get("D:\\");
+            DirectoryStream<Path> directoryStream = Files.newDirectoryStream(path);
+            // 不会关闭打开的目录流
+            Flux.fromIterable(directoryStream).blockLast();
+            // 会自动关闭
+            Flux.fromStream(Files.list(path)).blockLast();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    @Test
+    void testOperatorAll(){
+        Flux.just(1,2)
+                .flatMap(i->{
+                    System.out.println("f1:" + i);
+                    return Mono.just(true);
+                })
+                .all(Boolean::booleanValue)
+                .subscribe(a-> System.out.println("s1:" + a));
+
+        Flux.empty()
+                .flatMap(i->{
+                    System.out.println("f2:" + i);
+                    return Mono.just(true);
+                })
+                .all(Boolean::booleanValue)
+                .subscribe(a-> System.out.println("s2:" + a));
     }
 }
