@@ -23,7 +23,7 @@
         <reactor.version>3.3.0.RELEASE</reactor.version>
         <webmagic.version>0.7.3</webmagic.version>
         <fastjson.version>1.2.47</fastjson.version>
-        <jackson.version>2.9.9</jackson.version>
+        <jackson.version>2.9.10.4</jackson.version>
     </properties>
 
     <dependencies>
